@@ -1,0 +1,39 @@
+html, body , .App{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: @header-height;
+    width: 100%;
+    background-color: @header-color;
+  }
+  
+  .nav-wrap{
+    position: absolute;
+    top: @header-height;
+    left: 0;
+    height: calc(~"100% -" @header-height);
+    width: @nav-width;
+    background-color: @nav-color;
+  }
+  
+  .main-wrap{
+    position: absolute;
+    width: calc(~"100% -" @nav-width);
+    height: calc(~"100% -" @header-height);
+    margin-top: @header-height;
+    margin-left: @nav-width;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }

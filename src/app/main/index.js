@@ -3,7 +3,6 @@
  */
 
 import React, { Component } from 'react'
-import { Menu, Dropdown, Icon } from 'antd'
 
 
 export default class extends Component {
@@ -23,7 +22,8 @@ export default class extends Component {
 
     return (
       <div className="main-wrap">
-        {content}
+        <div className="title">小标题</div>
+        <div className="main-content">{content}</div>
       </div>
     )
   }

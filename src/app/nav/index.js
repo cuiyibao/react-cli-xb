@@ -42,14 +42,15 @@ export default class extends Component {
 
   render() {
     const NavList = this.getNavList(navList)
-    const pathname = browserHistory.getCurrentLocation().pathname;
-    console.log(pathname)
+    const pathname = browserHistory.getCurrentLocation().pathname
+    let openKey = pathname.indexOf('/', 1)
+    openKey > -1 ? openKey = pathname.substring(0, openKey) : openKey = ''
     return (
       <div className="nav-wrap">
-        <div style={{ width: '100%' , 'background-color': 'transparent' }}>
+        <div style={{ width: '100%' , 'backgroundColor': 'transparent' }}>
           <Menu
             defaultSelectedKeys={[pathname]}
-            defaultOpenKeys= {}
+            defaultOpenKeys= {[openKey]}
             mode="inline"
           >
             {NavList}

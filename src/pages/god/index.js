@@ -4,23 +4,35 @@
 
 import React, { Component } from 'react'
 
+import { getGodList } from './network'
 
 export default class extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
+      god: []
     }
   }
 
 
-  componentDidMount() {
+  componentWillMount() {
+    getGodList().then((data) => {
+      this.setState({god: data.data})
+    })
   }
 
   render() {
+    const { god } = this.state
+    const listItem = god.map((item, index) => 
+      <li key={index}>
+        <span>{item.area}</span>
+        <span>{item.birthday}</span>
+      </li>
+    )
     return (
       <div className="god-wrap">
-        <h1>商品</h1>
+        <ul>{listItem}</ul>
       </div>
     )
   }

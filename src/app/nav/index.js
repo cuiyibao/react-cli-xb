@@ -3,10 +3,10 @@
  */
 
 import React, { Component } from 'react'
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 import { Link, browserHistory } from 'react-router';
 
-import { menuConfig as navList } from '../../menu-config' 
+import { menuConfig as navList } from '../../config/menu-config' 
 
 export default class extends Component {
   constructor(props) {

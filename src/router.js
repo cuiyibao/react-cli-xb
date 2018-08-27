@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route, browserHistory } from 'react-router'
 import App from './app'
 
-import { menuConfig as routerConfig } from './menu-config'
+import { menuConfig as routerConfig } from './config/menu-config'
 
 import ErrorPage from './components/404'
 
@@ -10,7 +10,8 @@ let routeList = [];
 
 (function getRouter(list, key) {
     list.forEach((item, index) => {
-        let Id =  key ? Id = key + String(index) : Id = String(index)
+        let Id = String(index)
+        key ? Id += key : Id = String(index)
         if (item.children && item.children.length) {
             getRouter(item.children, Id)
         }else {

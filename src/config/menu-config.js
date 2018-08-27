@@ -1,6 +1,7 @@
-import Home from './pages/home'
-import God from './pages/god'
-import Form from './pages/form'
+import asyncComponent from '../utils/asyncComponent'
+const Home = asyncComponent(() => import('../pages/home'))
+const God = asyncComponent(() => import('../pages/god'))
+const Form = asyncComponent(() => import('../pages/form'))
 
 export const menuConfig = [{
     title: '主页',

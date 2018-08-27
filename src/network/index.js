@@ -1,6 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
-import { baseUrl, rTab } from '../global-config'
+import { baseUrl, rTab } from '../config/global-config'
 import Mock from 'mockjs'
 
 const config = {
@@ -36,7 +36,6 @@ net.interceptors.response.use(
 
 export function request(mockData, ajax){
     return new Promise((resolve, reject) => {
-        console.log(rTab)
         if(rTab){
             ajax(resolve)
         }else {

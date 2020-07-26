@@ -22,8 +22,7 @@ export default class extends Component {
 
     return (
       <div className="main-wrap">
-        <div className="title">小标题</div>
-        <div className="main-content">{content}</div>
+        {content}
       </div>
     )
   }

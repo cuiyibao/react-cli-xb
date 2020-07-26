@@ -2,7 +2,7 @@
  * 全局请求地址
  * baseUrl
  */
-export const baseUrl = '//127.0.0.1:8901'
+export const baseUrl = '/'
 
 /**
  * 请求mock或接口

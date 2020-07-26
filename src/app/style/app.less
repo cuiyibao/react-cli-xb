@@ -15,8 +15,57 @@ html, body , .App{
   top: 0;
   left: 0;
   height: @header-height;
+  z-index: 10;
   width: 100%;
   background-color: @header-color;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px #f0f1f2;
+
+  .header-left-wrp {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+
+    .he-logo {
+      width: 32px;
+      height: 32px;
+      vertical-align: top;
+      margin-right: 16px;
+      background: url('../../images/icon-logo.jpg') no-repeat center/cover;
+    }
+
+    .he-title {
+      font-size: 18px;
+      color: #222;
+      font-weight: 500;
+    }
+  }
+
+  .header-right-wrp {
+    .user-wrp {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+      cursor: pointer;
+
+      .user-name {
+        margin-left: 15px;
+        font-size: 14px;
+        color: rgba(0,0,0,.65);
+      }
+    }
+    .logout-btn {
+      width: 80px;
+      height: @header-height;
+      line-height: @header-height;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+    }
+  }
 }
 
 .nav-wrap{
@@ -35,7 +84,7 @@ html, body , .App{
   height: calc(~"100% -" @header-height);
   margin-top: @header-height;
   margin-left: @nav-width;
-  padding: 10px 20px 15px 20px;
+  // padding: 10px 20px 15px 20px;
   overflow: hidden;
   background-color: @main-color;
   .title{

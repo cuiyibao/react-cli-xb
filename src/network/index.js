@@ -2,6 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { baseUrl, rTab } from '../config/global-config'
 import Mock from 'mockjs'
+import { browserHistory } from 'react-router';
 
 const config = {
     baseURL: baseUrl,
@@ -27,7 +28,11 @@ net.interceptors.request.use(
 //添加响应拦截器
 net.interceptors.response.use(
     (response) => {
-        return Promise.resolve(response);
+        if (response.data.ec === 101) {
+            browserHistory.push('/login')
+            return
+        }
+        return Promise.resolve(response.data);
     }, ((error) => {
         return Promise.reject(error)
     })

@@ -5,6 +5,7 @@ import App from './app'
 import { menuConfig as routerConfig } from './config/menu-config'
 
 import ErrorPage from './components/404'
+import LoginPage from './pages/login-page'
 
 let routeList = [];
 
@@ -14,7 +15,7 @@ let routeList = [];
         key ? Id += key : Id = String(index)
         if (item.children && item.children.length) {
             getRouter(item.children, Id)
-        }else {
+        } else {
             routeList.push(<Route path={item.url} key={Id} component={item.component} />)
         }
     })
@@ -28,6 +29,7 @@ routeList.concat([
 export function getApp() {
     return (
         <Router history={browserHistory}>
+            <Route path="/login" key="-2" component={LoginPage} />
             <Route path="" component={App}>
                 {routeList}
             </Route>
